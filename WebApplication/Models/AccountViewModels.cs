@@ -12,6 +12,8 @@ namespace WebApplication.Models
         public string Url { get; set; }
 
         public string State { get; set; }
+
+        public string Confirmed { get; set; }
     }
 
     public class ManageInfoViewModel

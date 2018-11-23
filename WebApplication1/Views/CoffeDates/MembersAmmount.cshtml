@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebApplication1.Models.CoffeDate>
+
+@{
+                /**/
+
+                ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ShoutId)
+        </th>
+
+    </tr>
+    @{int amm = 0;
+        foreach (var item in Model)
+        {
+            if (item.Passed != 0)
+            {
+                amm += Int32.Parse(item.ShoutPrice);
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShoutId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShoutPrice)
+                    </td>
+                    <td>
+                        @Html.ActionLink("More info", "PassedMoreDetail", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        }
+        <tr>
+            <td>
+                Total: @Html.DisplayFor(a => amm)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,39 @@
+﻿@model WebApplication1.Models.CoffeDate
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShoutId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShoutPrice)
+        </th>
+        <th></th>
+    </tr>
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.ShoutId)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.ShoutPrice)
+                </td>
+                <td>
+                </td>
+            </tr>
+</table>
