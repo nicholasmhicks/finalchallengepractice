@@ -30,8 +30,11 @@ namespace WebApplication1.Controllers
         [Authorize]
         public ActionResult Index()
         {
+            //get user credentials of logged in user
             var manage = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            //create object of information
             var currentUser = manage.FindById(User.Identity.GetUserId());
+            //pass object to the view bag to use in view
             ViewBag.Confirmed = currentUser.EmailConfirmed;
             return View(db.CoffeDates.ToList());
         }
